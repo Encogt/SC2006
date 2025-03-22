@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginEnd="12dp">
+
+<TextView
+android:id="@+id/popup_text"
+    android:textColor="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Add Device"
+    android:textSize="30sp"
+    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_DeviceName"
+        android:text="Device Name"
+        android:textSize="30sp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_DeviceUsage"
+        android:text="Usage"
+        android:textSize="30sp"/>
+    <NumberPicker
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+
+    </LinearLayout>

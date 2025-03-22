@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context=".activity.devicemanager.DeviceManagerActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_above="@id/contentDeviceManagerInclude"
+        android:id="@+id/appbarContain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+        <include android:id="@+id/contentDeviceManagerInclude"
+            android:layout_marginTop="?attr/actionBarSize"
+            tools:context=".fragments.DeviceManagerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            layout="@layout/content_devicemanager" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

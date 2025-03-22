@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentDeviceManagerConstraintLayout"
+    tools:context=".fragments.DeviceManagerFragment"
+    android:background="@color/light_green">
+
+    <!-- Table Heading -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deviceManagerTableHeading"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:stretchColumns="*"
+        app:layout_constraintBottom_toTopOf="@id/deviceManagerTableScrollContain">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/deviceManagerTableHeading_Row">
+
+            <TextView
+                android:text="Device"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:paddingVertical="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/background_outline_sharp"/>
+
+            <TextView
+                android:text="Usage"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/background_outline_sharp"/>
+
+            <TextView
+                android:text="Duration"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:textStyle="bold"
+                android:background="@drawable/background_outline_sharp"/>
+        </TableRow>
+    </TableLayout>
+
+    <!-- Scrollable list for devices -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:id="@+id/deviceManagerTableScrollContain"
+        app:layout_constraintTop_toBottomOf="@id/deviceManagerTableHeading"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/deviceManagerTableBody"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"/>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Floating Action Button at the bottom -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
